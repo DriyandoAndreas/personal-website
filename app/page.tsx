@@ -1,6 +1,14 @@
 "use client";
 import { Moon, Sun } from "lucide-react";
-import { FaReact, FaPhp, FaJs } from "react-icons/fa";
+import {
+  FaReact,
+  FaPhp,
+  FaJs,
+  FaNode,
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa";
 import { FaFlutter, FaDartLang } from "react-icons/fa6";
 import { RiNextjsLine } from "react-icons/ri";
 import { useTheme } from "next-themes";
@@ -21,17 +29,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   const { setTheme } = useTheme();
   return (
     <>
-      <nav>
-        <div className="flex h-14 p-4 justify-between items-center backdrop-blur">
+      <nav className="sticky top-0">
+        <div className="flex h-14 p-4 justify-between items-center backdrop-blur ">
           <div></div>
           <div className="space-x-4 flex items-center">
             <Link href={"#home"}>Home</Link>
             <Link href={"#about"}>About</Link>
+            <Link href={"#project"}>Project</Link>
             <Link href={"#contact"}>Contact</Link>
           </div>
           <div className="flex items-center">
@@ -73,7 +89,7 @@ export default function Home() {
           <TabsContent value="overall">
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Technology overall</CardTitle>
+                <CardTitle className="text-2xl">Tech stcak overall</CardTitle>
                 <CardDescription>
                   {`Tech stack usually use for development.`}
                 </CardDescription>
@@ -93,6 +109,9 @@ export default function Home() {
                     </div>
                     <div>
                       <FaPhp className="text-4xl" />
+                    </div>
+                    <div>
+                      <FaNode className="text-4xl" />
                     </div>
                   </div>
                 </div>
@@ -143,6 +162,9 @@ export default function Home() {
                     <div>
                       <FaPhp className="text-4xl" />
                     </div>
+                    <div>
+                      <FaNode className="text-4xl" />
+                    </div>
                   </div>
                 </div>
               </CardFooter>
@@ -184,6 +206,65 @@ export default function Home() {
             </Card>
           </TabsContent>
         </Tabs>
+      </div>
+      <div
+        className="p-8 flex flex-col items-center justify-center"
+        id="project"
+      >
+        <div>
+          <h1 className="font-bold text-4xl mb-8">Project list</h1>
+        </div>
+        <div>
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="w-full max-w-sm"
+          >
+            <CarouselContent>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <span className="text-3xl font-semibold">
+                          {index + 1}
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </div>
+      <div
+        className="p-8 flex flex-col items-center justify-center"
+        id="contact"
+      >
+        <div>
+          <h1 className="font-bold text-4xl mb-8">Mutual? just dm!</h1>
+        </div>
+        <div className="flex space-x-4">
+          <div>
+            <Link href={"https://github.com"}>
+              <FaGithub className="text-4xl" />
+            </Link>
+          </div>
+          <div>
+            <Link href={"https://linkedin.com"}>
+              <FaLinkedin className="text-4xl" />
+            </Link>
+          </div>
+          <div>
+            <Link href={"https://instagram.com"}>
+              <FaInstagram className="text-4xl" />
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   );
