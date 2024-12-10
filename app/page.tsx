@@ -45,7 +45,7 @@ export default function Home() {
         <div className="flex h-14 p-4 justify-between items-center backdrop-blur ">
           <div></div>
           <div className="space-x-4 flex items-center">
-            <Link href={"#home"}>Home</Link>
+            <Link href={"/"}>Home</Link>
             <Link href={"#about"}>About</Link>
             <Link href={"#project"}>Project</Link>
             <Link href={"#contact"}>Contact</Link>
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <div className="p-8 text-center" id="home">
+      <div className="p-8 text-center">
         <h1 className="font-bold text-4xl">Software Development</h1>
         <h2 className="font-bold text-3xl">Fullstack Web Development</h2>
         <h2 className="font-bold text-3xl">Mobile App Development</h2>
@@ -219,7 +219,7 @@ export default function Home() {
             opts={{
               align: "start",
             }}
-            className="w-full max-w-sm"
+            className="w-full max-w-sm -z-10"
           >
             <CarouselContent>
               {Array.from({ length: 5 }).map((_, index) => (
@@ -236,8 +236,8 @@ export default function Home() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="invisible md:visible" />
+            <CarouselNext className="invisible md:visible" />
           </Carousel>
         </div>
       </div>
@@ -250,17 +250,19 @@ export default function Home() {
         </div>
         <div className="flex space-x-4">
           <div>
-            <Link href={"https://github.com"}>
+            <Link href={"https://github.com/DriyandoAndreas"}>
               <FaGithub className="text-4xl" />
             </Link>
           </div>
           <div>
-            <Link href={"https://linkedin.com"}>
+            <Link
+              href={"https://www.linkedin.com/in/driyando-andreas-tambunan/"}
+            >
               <FaLinkedin className="text-4xl" />
             </Link>
           </div>
           <div>
-            <Link href={"https://instagram.com"}>
+            <Link href={"https://www.instagram.com/zodatzo/"}>
               <FaInstagram className="text-4xl" />
             </Link>
           </div>
