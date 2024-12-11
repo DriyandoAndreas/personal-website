@@ -41,7 +41,7 @@ export default function Home() {
   const { setTheme } = useTheme();
   return (
     <>
-      <nav className="sticky top-0">
+      <nav className="sticky top-0 z-50">
         <div className="flex h-14 p-4 justify-between items-center backdrop-blur ">
           <div></div>
           <div className="space-x-4 flex items-center">
@@ -219,7 +219,7 @@ export default function Home() {
             opts={{
               align: "start",
             }}
-            className="w-full max-w-sm -z-10"
+            className="w-full max-w-sm"
           >
             <CarouselContent>
               {Array.from({ length: 5 }).map((_, index) => (
