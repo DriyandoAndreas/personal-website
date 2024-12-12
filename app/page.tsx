@@ -214,7 +214,7 @@ export default function Home() {
         <div>
           <h1 className="font-bold text-4xl mb-8">Project list</h1>
         </div>
-        <div>
+        <div className="overflow-hidden">
           <Carousel
             opts={{
               align: "start",
