@@ -36,9 +36,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
+import omniglobal from "@/public/assets/images/omniglobalproject.png"
+import soicc from "@/public/assets/images/soiccproject.png"
+import Image from "next/image";
 export default function Home() {
   const { setTheme } = useTheme();
+  const project = [
+    {
+      title: "omni global",
+      image: omniglobal,
+      link: "http://omnimileniaglobal.com/",
+    },
+    {
+      title: "soicc ",
+      image: soicc,
+      link: "https://soicc.vercel.app/",
+    },
+  ];
   return (
     <>
       <nav className="sticky top-0 z-50">
@@ -222,16 +236,16 @@ export default function Home() {
             className="w-full max-w-sm"
           >
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              {project.map((index) => (
+                <CarouselItem key={index.title} className="lg:basis">
                   <div className="p-1">
+                    <Link href={index.link}>
                     <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <span className="text-3xl font-semibold">
-                          {index + 1}
-                        </span>
+                      <CardContent className="p-0 flex aspect-square items-center justify-center">
+                        <Image src={index.image} alt={index.title}  priority className="rounded-md"/>
                       </CardContent>
                     </Card>
+                    </Link>
                   </div>
                 </CarouselItem>
               ))}
