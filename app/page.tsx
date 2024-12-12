@@ -214,7 +214,7 @@ export default function Home() {
         <div>
           <h1 className="font-bold text-4xl mb-8">Project list</h1>
         </div>
-        <div className="overflow-hidden">
+        <div className="overflow-hidden md:overflow-visible">
           <Carousel
             opts={{
               align: "start",
@@ -246,7 +246,7 @@ export default function Home() {
         id="contact"
       >
         <div>
-          <h1 className="font-bold text-4xl mb-8">Mutual? just dm!</h1>
+          <h1 className="font-bold text-4xl mb-8 text-center">Mutual? just dm!</h1>
         </div>
         <div className="flex space-x-4">
           <div>
