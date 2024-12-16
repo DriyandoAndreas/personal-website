@@ -4,7 +4,6 @@ import {
   FaReact,
   FaPhp,
   FaJs,
-  FaNode,
   FaGithub,
   FaLinkedin,
   FaInstagram,
@@ -36,8 +35,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import omniglobal from "@/public/assets/images/omniglobalproject.png"
-import soicc from "@/public/assets/images/soiccproject.png"
+import omniglobal from "@/public/assets/images/omniglobalproject.png";
+import soicc from "@/public/assets/images/soiccproject.png";
 import Image from "next/image";
 export default function Home() {
   const { setTheme } = useTheme();
@@ -124,9 +123,6 @@ export default function Home() {
                     <div>
                       <FaPhp className="text-4xl" />
                     </div>
-                    <div>
-                      <FaNode className="text-4xl" />
-                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -175,9 +171,6 @@ export default function Home() {
                   <div className="flex space-x-4">
                     <div>
                       <FaPhp className="text-4xl" />
-                    </div>
-                    <div>
-                      <FaNode className="text-4xl" />
                     </div>
                   </div>
                 </div>
@@ -240,11 +233,16 @@ export default function Home() {
                 <CarouselItem key={index.title} className="lg:basis">
                   <div className="p-1">
                     <Link href={index.link}>
-                    <Card>
-                      <CardContent className="p-0 flex aspect-square items-center justify-center">
-                        <Image src={index.image} alt={index.title}  priority className="rounded-md"/>
-                      </CardContent>
-                    </Card>
+                      <Card>
+                        <CardContent className="p-0 flex aspect-square items-center justify-center">
+                          <Image
+                            src={index.image}
+                            alt={index.title}
+                            priority
+                            className="rounded-md"
+                          />
+                        </CardContent>
+                      </Card>
                     </Link>
                   </div>
                 </CarouselItem>
@@ -260,7 +258,7 @@ export default function Home() {
         id="contact"
       >
         <div>
-          <h1 className="font-bold text-4xl mb-8 text-center">Mutual? just dm!</h1>
+          <h1 className="font-bold text-4xl mb-8 text-center">Find me on</h1>
         </div>
         <div className="flex space-x-4">
           <div>
