@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Driyando Andreas",
+  title: "Driyando Andreas Tambunan",
   description: "My Personal Website",
 };
 
