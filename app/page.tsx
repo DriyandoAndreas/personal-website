@@ -37,6 +37,7 @@ import {
 } from "@/components/ui/carousel";
 import omniglobal from "@/public/assets/images/omniglobalproject.png";
 import soicc from "@/public/assets/images/soiccproject.png";
+import sisko from "@/public/assets/images/sisko.png";
 import Image from "next/image";
 export default function Home() {
   const { setTheme } = useTheme();
@@ -49,6 +50,11 @@ export default function Home() {
     {
       title: "soicc ",
       image: soicc,
+      link: "https://soicc.vercel.app/",
+    },
+    {
+      title: "sisko ",
+      image: sisko,
       link: "https://soicc.vercel.app/",
     },
   ];
