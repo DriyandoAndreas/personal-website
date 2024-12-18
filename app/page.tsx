@@ -55,7 +55,7 @@ export default function Home() {
     {
       title: "sisko ",
       image: sisko,
-      link: "https://soicc.vercel.app/",
+      link: "https://github.com/DriyandoAndreas/Flutter-app/",
     },
   ];
   return (
