@@ -35,6 +35,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
+
 import omniglobal from "@/public/assets/images/omniglobalproject.png";
 import soicc from "@/public/assets/images/soiccproject.png";
 import sisko from "@/public/assets/images/sisko.png";
@@ -60,7 +62,7 @@ export default function Home() {
   ];
   return (
     <>
-      <nav className="sticky top-0 z-50">
+      <nav className="sticky top-0 z-50 hidden md:block lg:block">
         <div className="flex h-14 p-4 justify-between items-center backdrop-blur ">
           <div></div>
           <div className="space-x-4 flex items-center">
@@ -92,6 +94,30 @@ export default function Home() {
             </DropdownMenu>
           </div>
         </div>
+      </nav>
+      <nav className="w-full fixed bottom-0 z-50 block md:hidden lg:hidden p-4">
+        <Menubar className="h-14 flex justify-between">
+          <MenubarMenu>
+            <MenubarTrigger>
+              <Link href={"/"}>Home</Link>
+            </MenubarTrigger>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>
+              <Link href={"#about"}>About</Link>
+            </MenubarTrigger>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>
+              <Link href={"#project"}>Project</Link>
+            </MenubarTrigger>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>
+              <Link href={"#contact"}>Contact</Link>
+            </MenubarTrigger>
+          </MenubarMenu>
+        </Menubar>
       </nav>
       <div className="p-8 text-center">
         <h1 className="font-bold text-4xl">Software Development</h1>
@@ -266,7 +292,7 @@ export default function Home() {
         <div>
           <h1 className="font-bold text-4xl mb-8 text-center">Find me on</h1>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 mb-12 md:mb-0">
           <div>
             <Link href={"https://github.com/DriyandoAndreas"}>
               <FaGithub className="text-4xl" />
